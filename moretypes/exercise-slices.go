@@ -7,6 +7,11 @@ func Pic(dx, dy int) [][]uint8 {
 	for y := 0; y < dy; y++ {
 		res[y] = make([]uint8, dx)
 	}
+	for y := range res {
+		for x := range res[y] {
+			res[y][x] = uint8(x ^ y)
+		}
+	}
 	return res
 }
 
